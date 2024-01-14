@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class ArrayOps {
     public static void main(String[] args) {
-       int [] array = {0,1,2,4};
+       int [] array = {0};
        int [] testsecond = {6,9,4,7,3,4};
        int [] testissorted = {7,5,4,3,-12};
        int [] testForIsOrder = {1,2,3},test2={1,2,3} ;
@@ -14,7 +14,7 @@ public class ArrayOps {
     }
 
     public static int findMissingInt (int [] array) {
-        int MissingInt = 0;
+        int MissingInt = 1;
         for (int i =0; i < array.length; i++){
             if (array[i] != i){
                 MissingInt = i;
