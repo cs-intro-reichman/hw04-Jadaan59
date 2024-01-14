@@ -108,18 +108,3 @@ public class ArrayOps {
     }
 
 }
-
-
-/*
-int[] NewArr = new int[(array.length) +1];
-        NewArr = MakeNewArr(NewArr);
-        int MissingInt = 0;
-            for (int i = 0; i < array.length; i++){
-                if (array.length == 1){
-                    MissingInt = 1;
-                }
-                if (array[i] != NewArr[i]) {
-                    MissingInt = (int) NewArr[i];
-                }
-            }
- */
