@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class ArrayOps {
     public static void main(String[] args) {
-       int [] array = {0,1,3};
+       int [] array = {0,1,2,4};
        int [] testsecond = {6,9,4,7,3,4};
        int [] testissorted = {7,5,4,3,-12};
        int [] testForIsOrder = {1,2,3},test2={1,2,3} ;
@@ -14,26 +14,14 @@ public class ArrayOps {
     }
 
     public static int findMissingInt (int [] array) {
-        int[] NewArr = new int[(array.length) +1];
-        NewArr = MakeNewArr(NewArr);
         int MissingInt = 0;
-            for (int i = 0; i < array.length; i++){
-                if (array.length == 1){
-                    MissingInt = 1;
-                }
-                if (array[i] != NewArr[i]) {
-                    MissingInt = (int) NewArr[i];
-                }
+        for (int i =0; i < array.length; i++){
+            if (array[i] != i){
+                MissingInt = i;
+                break;
             }
-        return MissingInt;
-    }
-    // Makes new integer array that contains the numbers from 0 to the length of the new array.
-    public static int[] MakeNewArr (int [] array){
-        int [] arr = new int[array.length];
-        for (int i = 0; i < array.length; i++){
-            arr[i] = i;
         }
-        return arr;
+        return MissingInt;
     }
 
     public static int secondMaxValue(int [] array) {
@@ -120,3 +108,18 @@ public class ArrayOps {
     }
 
 }
+
+
+/*
+int[] NewArr = new int[(array.length) +1];
+        NewArr = MakeNewArr(NewArr);
+        int MissingInt = 0;
+            for (int i = 0; i < array.length; i++){
+                if (array.length == 1){
+                    MissingInt = 1;
+                }
+                if (array[i] != NewArr[i]) {
+                    MissingInt = (int) NewArr[i];
+                }
+            }
+ */
