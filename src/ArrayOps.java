@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Arrays;
 
 public class ArrayOps {
@@ -5,13 +7,14 @@ public class ArrayOps {
        int [] array = {0};
        int [] testsecond = {6,9,4,7,3,4};
        int [] testissorted = {7,5,4,3,-12};
-       int [] testForIsOrder = {1,2,3},test2={1,2,3} ;
+       int [] testForIsOrder = {3,-4,1, 2, 5},test2={1,-4,3,5} ;
        System.out.println(findMissingInt(array));
        System.out.println(secondMaxValue(testsecond));
        System.out.println(isSorted(testissorted));
        System.out.println(containsTheSameElements(testForIsOrder, test2));
 
     }
+
 
     public static int findMissingInt (int [] array) {
         int MissingInt = 1;
@@ -34,7 +37,9 @@ public class ArrayOps {
     }
         return MaxInt;
     }
-    public static int[] withOutMax(int [] array){
+
+
+    public static int[] withOutMax(int [] array) {
         int max = array[0];
         int maxIndex = 0;
 
@@ -48,30 +53,24 @@ public class ArrayOps {
         return array;
     }
 
+
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
       boolean isContains = false;
         if(array1.length >= array2.length){
-          for (int i = 0; i < array2.length; i++){
-              if(contains(array1,(int) array2[i])){
+          for(int i = 0; i < array1.length; i++){
+              if(contains(array2,(int) array1[i])){
                   isContains = true;
               }else{
                   isContains = false;
                   break;
               }
           }
-      }
-        if(array1.length < array2.length){
-            for (int i = 0; i < array1.length; i++){
-                if(contains(array2,(int) array1[i])){
-                    isContains = true;
-                }else{
-                    isContains = false;
-                    break;
-                }
-            }
+        } else if (array1.length < array2.length){
+            return (containsTheSameElements(array2, array1));
         }
         return isContains;
     }
+
 
     public static boolean contains(int[]array, int value){
         for (int i = 0; i< array.length; i++){
