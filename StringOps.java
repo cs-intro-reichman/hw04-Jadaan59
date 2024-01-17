@@ -61,73 +61,73 @@ public class StringOps {
         }
         return finalString;
     }
-/*
- * This function takes an input string that contains only letters. Returns the string:
- * 1: The first word is changed to lower-case letters.
- * 2: The first letter of each word is changed to upper-case letter
- *    and all the remaining letters in the word is changed to lower-case letters.
- * 3: All spaces are removed.
- */
+    /*
+     * This function takes an input string that contains only letters. Returns the string:
+     * 1: The first word is changed to lower-case letters.
+     * 2: The first letter of each word is changed to upper-case letter
+     *    and all the remaining letters in the word is changed to lower-case letters.
+     * 3: All spaces are removed.
+     */
     public static String camelCase(String string) {
         String str1 = lowerCase(string);
         String finString = "";
         for (int i = 0; i < string.length(); i++) {
-             if (str1.charAt(i) == ' ' && ('a' <= str1.charAt(i+1) && str1.charAt(i+1) <= 'z')) {
+            if (str1.charAt(i) == ' ' && ('a' <= str1.charAt(i+1) && str1.charAt(i+1) <= 'z')) {
                 ++i;
                 finString += (char) (str1.charAt(i) - 32);
             }
             else if ( str1.charAt(i) == ' ' ) {
                 i = i ;
             }else{
-            finString += (char) str1.charAt(i);
+                finString += (char) str1.charAt(i);
             }
         }
         return finString;
     }
 
-          public static int[] allIndexOf(String string, char chr) {
-         int [] arr = new int[containLetter(string, chr)]; // The length is how many times the char in the string.
-         int index = 0;
-         for (int i = 0; i < string.length(); i++){
+    public static int[] allIndexOf(String string, char chr) {
+        int [] arr = new int[containLetter(string, chr)]; // The length is how many times the char in the string.
+        int index = 0;
+        for (int i = 0; i < string.length(); i++){
             if (string.charAt(i) == chr) {
                 arr[index] = i;
                 index++;
-         }
-    }
-    return arr ;
-}
-
-        /**
-         * //  * Returns a string which is identical to the original string,
-         * //  * except that all the upper-case letters are converted to lower-case letters.
-         * Non-letter characters are left as is.
-         * we assume that we make this proces on a single String
-         */
-        public static String lowerCase(String string) {
-            String newstr = "";
-            for (int i = 0; i < string.length(); i++) {
-                if ((string.charAt(i) >= 'A') && (string.charAt(i) <= 'Z')) {
-                    newstr += (char) (string.charAt(i) + 32);
-                } else {
-                    newstr += (char) string.charAt(i);
-                }
             }
-            return newstr;
         }
+        return arr ;
+    }
 
-       /*
-        * This function returns the number of times the char in the string
-        */
+    /**
+     * //  * Returns a string which is identical to the original string,
+     * //  * except that all the upper-case letters are converted to lower-case letters.
+     * Non-letter characters are left as is.
+     * we assume that we make this proces on a single String
+     */
+    public static String lowerCase(String string) {
+        String newstr = "";
+        for (int i = 0; i < string.length(); i++) {
+            if ((string.charAt(i) >= 'A') && (string.charAt(i) <= 'Z')) {
+                newstr += (char) (string.charAt(i) + 32);
+            } else {
+                newstr += (char) string.charAt(i);
+            }
+        }
+        return newstr;
+    }
 
-        public static int containLetter (String s , char c) {
-            int contains = 0;
-            for (int i = 0; i < s.length(); i++) {
-                if (s.charAt(i) == c) {
+    /*
+     * This function returns the number of times the char in the string
+     */
+
+    public static int containLetter (String s , char c) {
+        int contains = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == c) {
                 contains ++;
-            }   
+            }
         }
-        return contains; 
-}
+        return contains;
+    }
 
     public static void printarray (int [] array) {
         for (int i = 0; i < array.length; i++) {

@@ -4,14 +4,14 @@ import java.util.Arrays;
 
 public class ArrayOps {
     public static void main(String[] args) {
-       int [] array = {0};
-       int [] testsecond = {6,9,4,7,3,4};
-       int [] testissorted = {7,5,4,3,-12};
-       int [] testForIsOrder = {3,-4,1, 2, 5},test2={1,-4,3,5} ;
-       System.out.println(findMissingInt(array));
-       System.out.println(secondMaxValue(testsecond));
-       System.out.println(isSorted(testissorted));
-       System.out.println(containsTheSameElements(testForIsOrder, test2));
+        int [] array = {0};
+        int [] testsecond = {6,9,4,7,3,4};
+        int [] testissorted = {7,5,4,3,-12};
+        int [] testForIsOrder = {3,-4,1, 2, 5},test2={1,-4,3,5} ;
+        System.out.println(findMissingInt(array));
+        System.out.println(secondMaxValue(testsecond));
+        System.out.println(isSorted(testissorted));
+        System.out.println(containsTheSameElements(testForIsOrder, test2));
 
     }
 
@@ -34,7 +34,7 @@ public class ArrayOps {
             if (array[i] > MaxInt){
                 MaxInt = array[i];
             }
-    }
+        }
         return MaxInt;
     }
 
@@ -55,16 +55,16 @@ public class ArrayOps {
 
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
-      boolean isContains = false;
+        boolean isContains = false;
         if(array1.length >= array2.length){
-          for(int i = 0; i < array1.length; i++){
-              if(contains(array2,(int) array1[i])){
-                  isContains = true;
-              }else{
-                  isContains = false;
-                  break;
-              }
-          }
+            for(int i = 0; i < array1.length; i++){
+                if(contains(array2,(int) array1[i])){
+                    isContains = true;
+                }else{
+                    isContains = false;
+                    break;
+                }
+            }
         } else if (array1.length < array2.length){
             return (containsTheSameElements(array2, array1));
         }
@@ -86,10 +86,10 @@ public class ArrayOps {
         boolean finalresult = false;
         for (int i=0; i < (array.length - 1); i++){
             if (array[i+1] >= array[i]) {
-               istrue = true;
+                istrue = true;
             }else {
-               istrue = false;
-               break;
+                istrue = false;
+                break;
             }
         }
         for (int i=0; i < (array.length - 1); i++){
