@@ -1,6 +1,3 @@
-package src;
-
-import src.ArrayOps;
 
 public class TesterArrayOps {
 
